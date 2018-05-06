@@ -15,7 +15,7 @@ private:
 
     // ボール，バー，ブロックの座標
     int ball_x;
-    int Ball_y;
+    int ball_y;
     int bar_x;
     int bar_y;
     int block_x;
