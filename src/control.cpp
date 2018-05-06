@@ -44,3 +44,50 @@ Control::~Control() {
         delete block[i];
     }
 }
+
+// ボールとバーの当たり判定
+void Control::HitCheckBallAndBar() {
+    // ボールクラス内での音フラグを取得
+    boundFlag = ball->GetSoundFlag();
+
+    // バーの座標を取得
+    bar_x = bar->GetX();
+    bar_y = bar->GetY();
+
+    // ボールの座標を取得
+    ball_x = ball->GetX();
+    ball_y = ball->GetY();
+
+    // ボールとバーの高さの半分を足したものよりも
+    // バーの中心とボールの中心の距離の絶対値の方が小さかったら当たり
+    // その距離より大きいやつは除外
+    if (abs(bar_y-ball_y) < bar_height/2+ball_height/2) {
+        // かつ，ボールがバー内にあれば当たり
+        if (bar_x+bar_width/2 > ball_x && bar_x-bar_width/2 < ball_x) {
+            // バーの左端に当たってる場合
+            if (ball_x < bar_x-bar_width/2*2/3) {
+                // ボールを反転
+                ball->SetDX(-1*ball->GetDX());
+                // yは跳ね返すだけ
+                ball->SetDY(-1*ball->GetDY());
+                // バウンド音フラグを立てる
+                boundFlag = true;
+            // バーの右端に当たっている場合
+            } else if (ball_x > bar_x+bar_width/2*2/3) {
+                // ボールを反転
+                ball->SetDX(-1*ball->GetDX());
+                // yは跳ね返すだけ
+                ball->SetDY(-1*ball->GetDY());
+                // バウンド音フラグを立てる
+                boundFlag = true;
+            // それ以外
+            } else {
+                // xは何もしない
+                // yは跳ね返すだけ
+                ball->SetDY(-1*ball->GetDY());
+                // バウンド音フラグを立てる
+                boundFlag = true;
+            }
+        }
+    }
+}
