@@ -26,7 +26,7 @@ private:
 
     void Draw();
     void Move();
-    void Destroy();
+    // void Destroy();
 
 public:
     Ball();

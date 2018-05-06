@@ -60,3 +60,48 @@ void Ball::Move() {
 void Ball::Draw() {
     DrawGraph(x-width/2, y-height/2, graphicHandle, TRUE);
 }
+
+bool Ball::All() {
+    Move();
+
+    // 描画処理
+    Draw();
+
+    return endFlag;
+}
+
+int Ball::GetX() {
+    return x;
+}
+
+int Ball::GetY() {
+    return y;
+}
+
+int Ball::GetWidth() {
+    return width;
+}
+
+int Ball::GetHeight() {
+    return height;
+}
+
+void Ball::SetDX(int dx) {
+    this->dx = dx;
+}
+
+void Ball::SetDY(int dy) {
+    this->dy = dy;
+}
+
+int Ball::GetDX() {
+    return dx;
+}
+
+int Ball::GetDY() {
+    return dy;
+}
+
+bool Ball::GetSoundFlag() {
+    return soundFlag;
+}
