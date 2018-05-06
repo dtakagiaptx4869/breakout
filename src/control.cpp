@@ -91,3 +91,15 @@ void Control::HitCheckBallAndBar() {
         }
     }
 }
+
+bool Control::All() {
+    bool endFlag = false;
+    HitCheckBallAndBar();
+    endFlag += bar->All();
+    endFlag += ball->All();
+    for (int i = 0; i < 12; i++) {
+        block[i]->All();
+    }
+
+    return endFlag;
+}

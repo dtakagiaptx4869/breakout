@@ -38,8 +38,8 @@ private:
     int demolishSoundHandle;
 
     void HitCheckBallAndBar();
-    void HitCheckBallAndBlock();
-    void SoundPlay();
+    // void HitCheckBallAndBlock();
+    // void SoundPlay();
 
 public:
     Control();
