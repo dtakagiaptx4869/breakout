@@ -39,7 +39,7 @@ private:
 
     void HitCheckBallAndBar();
     void HitCheckBallAndBlock();
-    // void SoundPlay();
+    void SoundPlay();
 
 public:
     Control();

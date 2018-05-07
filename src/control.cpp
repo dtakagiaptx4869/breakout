@@ -154,15 +154,29 @@ void Control::HitCheckBallAndBlock() {
     }
 }
 
+void Control::SoundPlay() {
+    if (boundFlag) PlaySoundMem(boundSoundHandle, DX_PLAYTYPE_BACK);
+    if (demolishFlag) PlaySoundMem(demolishSoundHandle, DX_PLAYTYPE_BACK);
+}
+
 bool Control::All() {
     bool endFlag = false;
-    HitCheckBallAndBar();
-    HitCheckBallAndBlock();
-    endFlag += bar->All();
-    endFlag += ball->All();
+
+    // ブロックの処理
     for (int i = 0; i < 12; i++) {
         block[i]->All();
     }
+    // バーの処理
+    endFlag += bar->All();
+    // ボールの処理
+    endFlag += ball->All();
+
+    // 当たり判定
+    HitCheckBallAndBar();
+    HitCheckBallAndBlock();
+
+    // 音再生
+    SoundPlay();
 
     return endFlag;
 }
