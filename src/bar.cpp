@@ -1,5 +1,4 @@
 #include "bar.h"
-#include "define.h"
 
 // コンストラクタ
 Bar::Bar() {

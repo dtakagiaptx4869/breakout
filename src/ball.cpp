@@ -1,6 +1,4 @@
 #include "ball.h"
-#include "define.h"
-#include "DxPortLib/DxLib.h"
 
 // コンストラクタ
 Ball::Ball() {

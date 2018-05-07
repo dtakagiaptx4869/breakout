@@ -1,10 +1,19 @@
-#include "DxPortLib/DxLib.h"
+#include "DxLib.h"
 #include "control.h"
 #include "define.h"
 
 char key[256];
 
+#ifdef DXPORTLIB
 int main(int argc, char const* argv[]) {
+    SetUseCharSet(DX_CHARSET_EXT_UTF8);
+#else
+int WINAPI WinMain(HINSTANCE,HINSTANCE,LPSTR,int) {
+#endif
+
+    // ウィンドウ上部に表示するテキスト
+    SetWindowText(_T("breakout"));
+
     ChangeWindowMode(TRUE);
 
     // DXライブラリ初期化

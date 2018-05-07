@@ -1,6 +1,9 @@
 #ifndef _BALL_H_
 #define _BALL_H_
 
+#include "DxLib.h"
+#include "define.h"
+
 class Ball {
 private:
     // x座標，y座標

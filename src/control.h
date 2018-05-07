@@ -1,7 +1,7 @@
 #ifndef _CONTROL_H_
 #define _CONTROL_H_
 
-#include "DxPortLib/DxLib.h"
+#include "DxLib.h"
 #include "define.h"
 #include "bar.h"
 #include "ball.h"

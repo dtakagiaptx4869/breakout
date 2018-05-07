@@ -1,4 +1,7 @@
-#include "DxPortLib/DxLib.h"
+#ifndef _BLOCK_H_
+#define _BLOCK_H_
+
+#include "DxLib.h"
 #include "define.h"
 
 class Block {
@@ -34,3 +37,5 @@ public:
     bool GetBrokenFlag();
     void All();
 };
+
+#endif

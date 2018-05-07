@@ -1,7 +1,8 @@
 #ifndef _BAR_H_
 #define _BAR_H_
 
-#include "DxPortLib/DxLib.h"
+#include "DxLib.h"
+#include "define.h"
 
 class Bar {
 private:
