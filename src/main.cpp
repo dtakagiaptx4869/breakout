@@ -2,8 +2,8 @@
  :    音楽:魔王魂
  :        https://maoudamashii.jokersounds.com/
  :
- :    画像:プログラミング入門サイト ~bituse~
- :        https://bituse.info/
+ :    参考サイト:プログラミング入門サイト ~bituse~
+ :        https://bituse.info/game/blockbreak/
  */
 
 
