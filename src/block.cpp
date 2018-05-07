@@ -19,17 +19,17 @@ void Block::Draw() {
     // ブロックが壊れてないときだけ描画
     if (!brokenFlag) {
         DrawGraph(x-width/2, y-height/2, graphicHandle, FALSE);
-    } /* else {
+    }  else {
         if (count < countMax) {
             // 透過度を設定
             SetDrawBlendMode(DX_BLENDMODE_ALPHA, (255/countMax)*(countMax-count));
             // 描画
-            DrawGraph(x-width/2, y-height/2, graphicHandle, FALSE);
+            DrawGraph(x-width/2, y-height/2, graphicHandle, TRUE);
             // 設定を戻す
-            SetDrawBlendMode(DX_BLENDMODE_ALPHA, 0);
+            SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
             count++;
         }
-    } */
+    }
 }
 
 int Block::GetX() {
